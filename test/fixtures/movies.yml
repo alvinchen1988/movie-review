@@ -6,7 +6,7 @@ one:
   runtime_in_minutes: 1
   description: MyText
   poster_image_url: MyString
-  release_date: 2016-03-28 13:44:32
+  release_date: 2016-03-28 13:53:47
 
 two:
   title: MyString
@@ -14,4 +14,4 @@ two:
   runtime_in_minutes: 1
   description: MyText
   poster_image_url: MyString
-  release_date: 2016-03-28 13:44:32
+  release_date: 2016-03-28 13:53:47
