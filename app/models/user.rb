@@ -5,5 +5,9 @@ class User < ActiveRecord::Base
   validates :firstname, presence: true
   validates :password, length: {in: 6..20}, on: :create
   has_secure_password
+
+  def full_name
+    "#{firstname} #{lastname}"
+  end
 end
 
