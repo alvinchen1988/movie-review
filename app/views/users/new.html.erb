@@ -1,0 +1,37 @@
+<h1>Sign up</h1>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+  <div>
+    <%= pluralize(@user.errors.count, "errors") %> prevented the account from being created:
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :firstname, "First Name" %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div>
+    <%= f.label :lastname, "Last Name" %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, "Password confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+
+  <% end %>
