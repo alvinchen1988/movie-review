@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160331194516) do
+=======
+ActiveRecord::Schema.define(version: 20160330031808) do
+>>>>>>> admin
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"

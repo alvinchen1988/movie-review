@@ -1,15 +1,17 @@
-<h1>Sign up</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-  <div>
-    <%= pluralize(@user.errors.count, "errors") %> prevented the account from being created:
-    <ul>
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+<h2>Create User</h2>
+ 
+ <% if @user.errors.present? %> 
+ <div>
+ <%= pluralize(@user.errors.count, "errors") %> prevented this movie from being submitted:
+ <ul>
+<% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+<% end %>
+</ul>
+</div>
+ <% end %>
+<%= form_for @user, url: admin_users_path do |f| %>
+
   <div>
     <%= f.label :email, "Email" %>
     <%= f.text_field :email %>
@@ -31,7 +33,11 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div>
+    <%= f.label :is_admin, "set as admin" %>
+    <%= f.check_box :is_admin %>
+  </div>
+  <div>
     <%= f.submit "Submit" %>
   </div>
 
-  <% end %>
+<% end %>

@@ -2,6 +2,24 @@
 <%=link_to "Submit a movie", new_movie_path %>
 <hr>
 
+<%= form_tag movies_path ,method: :get do %>
+  <div class="col-lg-2">
+    <%= label_tag :title, "Title" %>
+    <%= text_field_tag :title %>
+  </div>
+  <div>
+    <%= label_tag :director %>
+    <%= text_field_tag :director %>
+  </div>
+  <div>
+    <%= label_tag :runtime_in_minutes %>
+    <%= select_tag(:runtime_in_minutes, options_for_select([["under 90 minutes", 90],["between 90 and 120 minutes", "90-120"],["more than 120 minutes", 120]], 1)) %>
+  </div>
+  <div>
+    <%= submit_tag "Submit"%>
+  </div>
+<% end %>
+
 <% @movies.each do |movie| %>
   <div><%=image_tag(movie.image.thumb.url)%></div>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
