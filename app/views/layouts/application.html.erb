@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% if session[:admin_user_id] %>
+   <%= link_to("back to admin", "/sessions/switch-back") %>
+<% end %>
+
 <% flash.each do |message_type, message| %>
      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
  <% end %>
